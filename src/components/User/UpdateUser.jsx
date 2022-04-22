@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export const UpdateUser = ({data, showUpdate}) => {
+export const UpdateUser = ({id, setShowUpdate}) => {
 
     const [ firstName, setFirstName ] = useState()
     const [ lastName, setLastName ] = useState()
@@ -16,7 +16,7 @@ export const UpdateUser = ({data, showUpdate}) => {
     params.append("email", email)
     params.append("password", password)
     params.append("class_id", class_id)
-    params.append("id", data.id)
+    params.append("id", id)
 
     console.log(params.toString())
 
@@ -37,30 +37,39 @@ export const UpdateUser = ({data, showUpdate}) => {
                         console.error(err)
                     }
     }
+
+    useEffect(() => {
+        console.log("UpdateUser Component Mounted.... ID is: " + id)
+        return () => {
+            console.log("UpdateUser Component Un-Mounted...")
+        }
+    },[])
     return (
-        <form className="putform" method="put">
-            <span onClick={() => {showUpdate(false)}} className="closebtn">&times;</span>
-            <label>Firstname: </label>
-            <input onChange={(event) => {
-                setFirstName(event.target.value)
-            }} />
-                <label>Lastname: </label>
-            <input onChange={(event) => {
-                setLastName(event.target.value)
-            }} />
-                <label>Email: </label>
-            <input onChange={(event) => {
-                setEmail(event.target.value)
-            }} />
-                <label>Password: </label>
-            <input onChange={(event) => {
-                setPassword(event.target.value)
-            }} />
-                <label>Class_id: </label>
-            <input onChange={(event) => {
-                setClass_id(event.target.value)
-            }} />
-            <button type="button" onClick={(PutUser)}>Update user</button>
-        </form>
+        <div className="putcontainer">
+            <form className="putform" method="put">
+                <span onClick={() => {setShowUpdate(false)}} className="closebtn">&times;</span>
+                <label>Firstname: </label>
+                <input onChange={(event) => {
+                    setFirstName(event.target.value)
+                }} />
+                    <label>Lastname: </label>
+                <input onChange={(event) => {
+                    setLastName(event.target.value)
+                }} />
+                    <label>Email: </label>
+                <input onChange={(event) => {
+                    setEmail(event.target.value)
+                }} />
+                    <label>Password: </label>
+                <input onChange={(event) => {
+                    setPassword(event.target.value)
+                }} />
+                    <label>Class_id: </label>
+                <input onChange={(event) => {
+                    setClass_id(event.target.value)
+                }} />
+                <button type="button" onClick={(PutUser)}>Update user</button>
+            </form>
+        </div>
     )
 }
