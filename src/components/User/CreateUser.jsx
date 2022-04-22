@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const CreateUser = () => {
+export const CreateUser = ({showCreate}) => {
     const url = 'http://localhost:4000/api/user'
     
     const [ firstName, setFirstName ] = useState()
@@ -8,6 +8,7 @@ export const CreateUser = () => {
     const [ email, setEmail ] = useState()
     const [ password, setPassword ] = useState()
     const [ class_id, setClass_id ] = useState()
+
 
     async function PostUser() {
         console.log(firstName, lastName, email, password, class_id)
@@ -38,6 +39,7 @@ export const CreateUser = () => {
     }
     return (
       <form className="createform" method="post">
+            <span onClick={() => {showCreate(false)}} className="closebtn">&times;</span>
             <label>Firstname: </label>
             <input onChange={(event) => {
                 setFirstName(event.target.value)
