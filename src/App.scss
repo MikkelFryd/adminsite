@@ -13,17 +13,17 @@ nav {
 }
 
 section {
-    width: 95%;
+    width: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     .putcontainer {
         position: absolute;
-        width: 95vw;
+        width: 100vw;
         background: rgba(20, 20, 20, 0.8);
-        height: 100vh;
+        height: 130%;
         .putform {
-            width: 50%;
+            width: 30%;
             position: relative;
             border: 2px solid white;
             padding: 2vw;
@@ -33,7 +33,15 @@ section {
             margin: auto;
             border-radius: 10px;
             font-family: sans-serif;
-            transform: translateY(50%);
+            color: white;
+            transform: translateY(20%);
+            input {
+                width: 90%;
+                margin: auto;
+                border: none;
+                border-radius: 6px;
+                padding: 5px;
+            }
             button {
                 margin: auto;
                 border-radius: 4px;
