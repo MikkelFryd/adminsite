@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const UpdateUser = ({data}) => {
+export const UpdateUser = ({data, showUpdate}) => {
 
     const [ firstName, setFirstName ] = useState()
     const [ lastName, setLastName ] = useState()
@@ -39,6 +39,7 @@ export const UpdateUser = ({data}) => {
     }
     return (
         <form className="putform" method="put">
+            <span onClick={() => {showUpdate(false)}} className="closebtn">&times;</span>
             <label>Firstname: </label>
             <input onChange={(event) => {
                 setFirstName(event.target.value)

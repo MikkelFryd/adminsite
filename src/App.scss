@@ -45,16 +45,16 @@ section {
     border: 1px solid black;
     font-family: sans-serif;
     padding: 2vw;
-    .closebtn {
-        font-size: 30px;
-        display: block;
-        justify-content: flex-end;
-        cursor: pointer;
-        margin-left: auto;
-        width: fit-content;
-    }
     button {
         width: 50%;
         margin: auto;
     }
+}
+.closebtn {
+    font-size: 30px;
+    display: block;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-left: auto;
+    width: fit-content;
 }

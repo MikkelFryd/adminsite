@@ -18,7 +18,7 @@ export const GetUser = ({data}) => {
                 <p>{data.password}</p>
                 <p>{data.class_id}</p>
                 <button onClick={(setShowUpdate)}>Edit</button>
-                {showUpdate && <UpdateUser data={data}/>}
+                {showUpdate && <UpdateUser data={data} showUpdate={setShowUpdate}/>}
                 <button onClick={() => {
                     fetch(url + "/" + data.id, options)
                     console.log('deleted ' + data.firstname)
