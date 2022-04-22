@@ -17,9 +17,9 @@ export const GetUser = ({data, setShowUpdate, setSelectedID}) => {
     return (
             <div className="listcontainer">
                 <b>{data.firstname} {data.lastname}</b>
-                <p>{data.email}</p>
-                <p>{data.password}</p>
-                <p>{data.class_id}</p>
+                <p>Email: {data.email}</p>
+                <p>Password: {data.password}</p>
+                <p>Hold: {data.class_id}</p>
                 <button onClick={(showUpdateHandler)}>Edit</button>
                 <button onClick={() => {
                     fetch(url + "/" + data.id, options)
