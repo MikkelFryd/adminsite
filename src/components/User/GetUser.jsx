@@ -16,8 +16,7 @@ export const GetUser = ({data, setShowUpdate, setSelectedID}) => {
 
     return (
             <div className="listcontainer">
-                <p>{data.firstname}</p>
-                <p>{data.lastname}</p>
+                <b>{data.firstname} {data.lastname}</b>
                 <p>{data.email}</p>
                 <p>{data.password}</p>
                 <p>{data.class_id}</p>

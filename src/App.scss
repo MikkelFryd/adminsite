@@ -1,89 +1,107 @@
-
-
-nav {
-    display: flex;
-    justify-content: flex-end;
-    gap: 2vw;
+body {
+    margin: 0;
+    overflow-x: hidden;
 }
 
-.createbtn {
-    display: block;
-    margin-left: auto;
-    margin-top: 10px;
-}
 
-section {
-    width: 100%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    .putcontainer {
-        position: absolute;
-        width: 100vw;
-        background: rgba(20, 20, 20, 0.8);
-        height: 130%;
-        .putform {
-            width: 30%;
-            position: relative;
-            border: 2px solid white;
-            padding: 2vw;
-            background-color: dimgrey;
-            gap: 2vw;
-            display: grid;
-            margin: auto;
-            border-radius: 10px;
-            font-family: sans-serif;
-            color: white;
-            transform: translateY(20%);
-            input {
-                width: 90%;
+.maincontainer {
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2vw;
+        padding: 10px;
+    }
+    .createbtn {
+        display: block;
+        margin-left: auto;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    section {
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        .putcontainer {
+            position: absolute;
+            width: 100vw;
+            background: rgba(20, 20, 20, 0.8);
+            height: 130%;
+            margin-top: 10px;
+            .putform {
+                width: 30%;
+                position: relative;
+                border: 2px solid white;
+                padding: 2vw;
+                background-color: dimgrey;
+                gap: 2vw;
+                display: grid;
                 margin: auto;
-                border: none;
-                border-radius: 6px;
-                padding: 5px;
+                border-radius: 10px;
+                font-family: sans-serif;
+                color: white;
+                transform: translateY(20%);
+                input {
+                    width: 90%;
+                    margin: auto;
+                    border: none;
+                    border-radius: 6px;
+                    padding: 5px;
+                }
+                button {
+                    margin: auto;
+                    border-radius: 8px;
+                    border: 2px solid white;
+                    padding: 10px;
+                    width: 40%;
+                    background-color: dimgrey;
+                    color: white;
+                    transition: ease-in-out 0.3s;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: darkgrey;
+                }
+                
             }
+        }
+        .listcontainer {
+            display: table-caption;
+            width: 80%;
+            margin: 20px auto;
+            font-family: sans-serif;
+            display: grid;
+            padding: 10px;
+            gap: 1vw;
+            -webkit-box-shadow: 2px 0px 12px 0px #000000; 
+            box-shadow: 2px 0px 12px 0px #000000;
+            border-radius: 8px;
             button {
+                width: 50%;
                 margin: auto;
-                border-radius: 4px;
-                border: none;
-                padding: 10px;
             }
         }
     }
-    .listcontainer {
-        display: table-caption;
-        width: 80%;
-        margin: 20px auto;
-        font-family: sans-serif;
+    .createform {
+        width: 25%;
+        margin: auto;
         display: grid;
-        padding: 10px;
         gap: 1vw;
-        -webkit-box-shadow: 2px 0px 12px 0px #000000; 
-        box-shadow: 2px 0px 12px 0px #000000;
+        border: 1px solid black;
+        font-family: sans-serif;
+        padding: 2vw;
         button {
             width: 50%;
             margin: auto;
         }
     }
-}
-.createform {
-    width: 25%;
-    margin: auto;
-    display: grid;
-    gap: 1vw;
-    border: 1px solid black;
-    font-family: sans-serif;
-    padding: 2vw;
-    button {
-        width: 50%;
-        margin: auto;
+    .closebtn {
+        font-size: 30px;
+        display: block;
+        justify-content: flex-end;
+        cursor: pointer;
+        margin-left: auto;
+        width: fit-content;
     }
-}
-.closebtn {
-    font-size: 30px;
-    display: block;
-    justify-content: flex-end;
-    cursor: pointer;
-    margin-left: auto;
-    width: fit-content;
 }
