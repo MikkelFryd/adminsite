@@ -38,7 +38,8 @@ export const CreateUser = ({showCreate}) => {
                     }
     }
     return (
-      <form className="createform" method="post">
+        <div className="createcontainer">
+        <form className="createform" method="post">
             <span onClick={() => {showCreate(false)}} className="closebtn">&times;</span>
             <label>Firstname: </label>
             <input onChange={(event) => {
@@ -62,5 +63,6 @@ export const CreateUser = ({showCreate}) => {
             }} />
             <button type="button" onClick={(PostUser)}>Post user</button>
         </form>
+        </div>
     )
 }
