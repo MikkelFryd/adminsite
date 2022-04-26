@@ -20,8 +20,8 @@ export const UserComponent = () => {
 
     useEffect(() => {
         fetch(url, options)
-        .then(data => data.json())
         .then(json => setUserData(json.data))
+        .then(json => setUserData(json))
         console.log(userData)
     }, [])
 
