@@ -1,22 +1,36 @@
 body {
     margin: 0;
     overflow-x: hidden;
+    background-color: #eee;
+
 }
 
 
 .maincontainer {
 
     nav {
-        display: flex;
-        justify-content: flex-end;
-        gap: 2vw;
-        padding: 10px;
-    }
-    .createbtn {
-        display: block;
-        margin-left: auto;
-        margin-top: 10px;
-        margin-right: 10px;
+        display: grid;
+        grid-template-columns: 60% 10% 10% 10% 10%;
+        align-content: center;
+        height: 60px;
+        h1 {
+            margin: 0;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        button {
+            width: 80%;
+            background-color: dimgrey;
+            padding: 8px;
+            border: 1px solid white;
+            color: white;
+            border-radius: 8px;
+            transition: ease-in-out 0.2s;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgrey;
+        }
     }
     section {
         width: 100%;
@@ -67,7 +81,6 @@ body {
             }
         }
         .listcontainer {
-
             display: table-caption;
             width: 80%;
             margin: 20px auto;
@@ -75,12 +88,24 @@ body {
             display: grid;
             padding: 10px;
             gap: 1vw;
-            -webkit-box-shadow: 2px 0px 12px 0px #000000; 
-            box-shadow: 2px 0px 12px 0px #000000;
-            border-radius: 8px;
+            -webkit-box-shadow: 2px 0px 4px 0px #000000; 
+            box-shadow: 2px 0px 4px 0px #000000;
+            border-radius: 6px;
+            background-color: dimgrey;
+            color: white;
             button {
-                width: 50%;
                 margin: auto;
+                border-radius: 8px;
+                border: 1px solid white;
+                padding: 8px;
+                width: 30%;
+                background-color: dimgrey;
+                color: white;
+                transition: ease-in-out 0.2s;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: darkgrey;
             }
             p {
                 line-break: anywhere;
@@ -91,8 +116,8 @@ body {
         position: absolute;
         width: 100vw;
         background: rgba(20, 20, 20, 0.8);
-        height: 130%;
-        margin-top: 10px;
+        height: 100vh;
+        // margin-top: 10px;
         .createform {
             width: 30%;
             position: relative;
@@ -114,7 +139,7 @@ body {
                 width: 40%;
                 background-color: dimgrey;
                 color: white;
-                transition: ease-in-out 0.3s;
+                transition: ease-in-out 0.2s;
                 cursor: pointer;
             }
             button:hover {

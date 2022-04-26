@@ -35,8 +35,6 @@ export const UserComponent = () => {
 
     return (
             <>
-            <button className="createbtn" onClick={(setShowCreate)}>Create user</button>
-            {showCreate && <CreateUser showCreate={setShowCreate}/>}
         <section>
         {showUpdate && <UpdateUser data = {userData[selectedID]} id={selectedID} showUpdate={showUpdate} setShowUpdate={setShowUpdate}/> }
         {userData && userData.map((item, index) => {
