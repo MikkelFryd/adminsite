@@ -19,7 +19,7 @@ export const GetUser = ({data, setShowUpdate, setSelectedID}) => {
                 <b>{data.firstname} {data.lastname}</b>
                 <p>Email: {data.email}</p>
                 <p>Password: {data.password}</p>
-                <p>Hold: {data.class_id}</p>
+                <p>Hold: {data.team_id}</p>
                 <button onClick={(showUpdateHandler)}>Edit</button>
                 <button onClick={() => {
                     fetch(url + "/" + data.id, options)

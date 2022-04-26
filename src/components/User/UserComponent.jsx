@@ -18,19 +18,27 @@ export const UserComponent = () => {
         headers: fetchHeaders
     }
 
-    useEffect(() => {
+   useEffect(() => {
+
         fetch(url, options)
-        .then(json => setUserData(json.data))
-        .then(json => setUserData(json))
-        console.log(userData)
-    }, [])
+
+            .then((data) => data.json())
+
+            .then((json) => {
+                const newArray = [];
+                for (const item of json) {
+                    newArray[item.id] = item;
+                }
+                console.log(newArray)
+                setUserData(newArray)});
+    }, []);
 
     return (
             <>
             <button className="createbtn" onClick={(setShowCreate)}>Create user</button>
             {showCreate && <CreateUser showCreate={setShowCreate}/>}
         <section>
-        {showUpdate && <UpdateUser id={selectedID} showUpdate={showUpdate} setShowUpdate={setShowUpdate}/> }
+        {showUpdate && <UpdateUser data = {userData[selectedID]} id={selectedID} showUpdate={showUpdate} setShowUpdate={setShowUpdate}/> }
         {userData && userData.map((item, index) => {
             return (
                 <GetUser setSelectedID={setSelectedID} setShowUpdate={setShowUpdate} key={item.id} data={item} />

@@ -67,6 +67,7 @@ body {
             }
         }
         .listcontainer {
+
             display: table-caption;
             width: 80%;
             margin: 20px auto;
@@ -80,6 +81,9 @@ body {
             button {
                 width: 50%;
                 margin: auto;
+            }
+            p {
+                line-break: anywhere;
             }
         }
     }

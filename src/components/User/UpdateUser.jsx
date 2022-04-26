@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react"
 
-export const UpdateUser = ({id, setShowUpdate}) => {
+export const UpdateUser = ({id, setShowUpdate, data}) => {
+    console.log(data)
 
-    const [ firstName, setFirstName ] = useState()
-    const [ lastName, setLastName ] = useState()
-    const [ email, setEmail ] = useState()
-    const [ password, setPassword ] = useState()
-    const [ class_id, setClass_id ] = useState()
+    const [ firstname, setFirstName ] = useState(data.firstname) 
+    const [ lastname, setLastName ] = useState(data.lastname)
+    const [ email, setEmail ] = useState(data.email)
+    const [ password, setPassword ] = useState(data.password)
+    const [ team_id, setTeam_id ] = useState(data.team_id)
 
     const url = 'http://localhost:4000/api/user'
-    console.log(firstName, lastName, email, password, class_id)
+    console.log(firstname, lastname, email, password, team_id)
     let params = new URLSearchParams()
-    params.append("firstname", firstName)
-    params.append("lastname", lastName)
+    params.append("firstname", firstname)
+    params.append("lastname", lastname)
     params.append("email", email)
     params.append("password", password)
-    params.append("class_id", class_id)
+    params.append("team_id", team_id)
     params.append("id", id)
 
     console.log(params.toString())
@@ -49,24 +50,24 @@ export const UpdateUser = ({id, setShowUpdate}) => {
             <form className="putform" method="put">
                 <span onClick={() => {setShowUpdate(false)}} className="closebtn">&times;</span>
                 <label>Firstname: </label>
-                <input onChange={(event) => {
+                <input value={firstname} onChange={(event) => {
                     setFirstName(event.target.value)
                 }} />
                     <label>Lastname: </label>
-                <input onChange={(event) => {
+                <input value={lastname} onChange={(event) => {
                     setLastName(event.target.value)
                 }} />
                     <label>Email: </label>
-                <input onChange={(event) => {
+                <input value={email} onChange={(event) => {
                     setEmail(event.target.value)
                 }} />
                     <label>Password: </label>
-                <input onChange={(event) => {
+                <input value={password} onChange={(event) => {
                     setPassword(event.target.value)
                 }} />
-                    <label>Class_id: </label>
-                <input onChange={(event) => {
-                    setClass_id(event.target.value)
+                    <label>Team_id: </label>
+                <input value={team_id} onChange={(event) => {
+                    setTeam_id(event.target.value)
                 }} />
                 <button type="button" onClick={(PutUser)}>Update user</button>
             </form>
