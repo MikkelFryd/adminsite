@@ -41,6 +41,7 @@ export const CreateUser = ({showCreate}) => {
         <div className="createcontainer">
         <form className="createform" method="post">
             <span onClick={() => {showCreate(false)}} className="closebtn">&times;</span>
+            <h2>Create User</h2>
             <label>Firstname: </label>
             <input onChange={(event) => {
                 setFirstName(event.target.value)

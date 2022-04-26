@@ -49,6 +49,7 @@ export const UpdateUser = ({id, setShowUpdate, data}) => {
         <div className="putcontainer">
             <form className="putform" method="put">
                 <span onClick={() => {setShowUpdate(false)}} className="closebtn">&times;</span>
+                <h3>Update User</h3>
                 <label>Firstname: </label>
                 <input value={firstname} onChange={(event) => {
                     setFirstName(event.target.value)
